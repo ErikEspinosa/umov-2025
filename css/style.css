@@ -1,1 +1,106 @@
-/*# sourceMappingURL=style.css.map */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.nav-main {
+  background-color: #3a16b7;
+  color: #fff;
+}
+.nav-main .nav-main-grid {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-main .nav-main-grid .nav-main-logo {
+  display: flex;
+  align-items: center;
+}
+.nav-main .nav-main-grid .nav-main-links {
+  display: flex;
+  align-items: center;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item {
+  display: inline-block;
+  margin-right: 25px;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item a:hover {
+  text-decoration: underline;
+}
+.nav-main .nav-main-grid .nav-main-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 210px;
+  height: 55px;
+  background-color: #502dcf;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-main .nav-main-grid .nav-main-login:hover {
+  text-decoration: underline;
+}
+.nav-main .nav-main-grid .nav-main-login img {
+  margin-right: 10px;
+}
+
+.contact-bar {
+  height: 45px;
+  background-color: #000751;
+  color: #fff;
+}
+.contact-bar .contact-bar-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-bar .contact-bar-grid .contact-bar-info {
+  font-size: 15px;
+  font-weight: 500;
+  color: #acafd1;
+}
+.contact-bar .contact-bar-grid .contact-bar-info a {
+  color: #ffce46;
+}
+.contact-bar .contact-bar-grid .contact-bar-info a:hover {
+  text-decoration: underline;
+}
+.contact-bar .contact-bar-grid .contact-bar-whatsapp {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  color: #6dd400;
+  margin-left: 12px;
+}
+.contact-bar .contact-bar-grid .contact-bar-whatsapp:hover {
+  text-decoration: underline;
+}
+.contact-bar .contact-bar-grid .contact-bar-whatsapp img {
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */
