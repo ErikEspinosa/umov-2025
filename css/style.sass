@@ -339,6 +339,96 @@ a
                 line-height: 1.5
                 margin: 0
 
+.contact-banner
+    background-color: #f1f6fa
+    padding: 81px 0 99px 0
+    @include tablet
+        padding: 90px 0
+    @include mobile
+        padding: 36px 0 46px 0
+    .contact-banner-grid
+        background-color: #0072ff
+        display: grid
+        grid-template-columns: min-content auto 300px
+        border-radius: 133px
+        @include tablet
+            grid-template-columns: min-content auto 250px
+        @include mobile
+            grid-template-columns: min-content auto 120px
+        .contact-banner-image
+            .contact-banner-image-circle
+                background: linear-gradient(to left, #00abff 100%, #0072ff 3%)
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 180px
+                height: 180px
+                border-radius: 50%
+                @include mobile
+                    width: 53.4px
+                    height: 53.4px
+                    img
+                        width: 35.9px
+                        height: 37.8px
+        .contact-banner-info
+            display: flex
+            align-items: center
+            margin-left: 15px
+            @include tablet
+                margin-left: 28px
+            @include mobile
+                margin-left: 5.6px
+            h2
+                color: #fff
+                font-size: 36px
+                font-weight: 500
+                line-height: normal
+                letter-spacing: -1.13px
+                margin: 0
+                @include tablet
+                    font-size: 29px
+                    letter-spacing: -0.91px
+                @include mobile
+                    font-size: 14px
+                    letter-spacing: -0.44px
+            .contact-banner-info-highlight
+                color: #5ed6db
+            .contact-banner-info-title
+                @include mobile
+                    display: none
+            .contact-banner-info-title-mobile
+                display: none
+                @include mobile
+                    display: block
+        .contact-banner-button
+            display: flex
+            justify-content: right
+            align-items: center
+            padding-right: 59px
+            @include tablet
+                padding-right: 20px
+            @include mobile
+                padding-right: 9px
+            a
+                width: 240px
+                height: 50px
+                background-color: #0f2751
+                color: #fff
+                font-size: 18px
+                font-weight: 500
+                letter-spacing: -0.57px
+                line-height: 2.8
+                text-align: center
+                border-radius: 25px
+                &:hover
+                    background-color: #001972
+                    text-decoration: none
+                @include mobile
+                    width: 105px
+                    height: 40px
+                    font-size: 14px
+                    letter-spacing: -0.44px
+
 .agreements
     padding: 60px 0 88px 0
     @include tablet
@@ -495,5 +585,147 @@ a
                 @include mobile
                     font-weight: 600
 
-
-        
+.contact
+    background: linear-gradient(245deg, #4c2272 99%, #060e64 1%)
+    padding: 72px 0 93px 0
+    @include tablet
+        padding: 70px 0 74px 0
+    @include mobile
+        padding: 40px 0
+    .contact-grid
+        display: grid
+        grid-template-columns: auto 1fr
+        gap: 21px
+        @include tablet
+            gap: 20px
+        @include mobile
+            gap: 0
+        .contact-item-image
+            img
+                display: block
+                border: 0
+            .contact-item-image-desktop
+                @include tablet
+                    display: none
+                @include mobile
+                    display: none
+            .contact-item-image-mobile
+                display: none
+                @include tablet
+                    display: block
+        .contact-item-form
+            background-color: #398ef7
+            color: #fff
+            padding: 35px 20px 0 20px
+            border-radius: 8px
+            @include tablet
+                padding: 23px 15px 0 15px
+            @include mobile
+                padding: 23px 15px 31px 15px
+            h2.contact-item-form-title
+                font-size: 36px
+                font-weight: 500
+                margin: 0 0 5px 0
+                @include tablet
+                    display: none
+                @include mobile
+                    display: none
+            h2.contact-item-form-title-mobile
+                display: none
+                font-size: 18px
+                font-weight: 600
+                letter-spacing: -0.57px
+                margin: 0 0 20px 0
+                line-height: normal
+                @include tablet
+                    display: block
+                @include mobile
+                    display: block
+            p
+                font-size: 16px
+                font-weight: 500
+                letter-spacing: -0.5px
+                color: #f6f3ff
+                margin: 0 0 21px 0
+                @include tablet
+                    display: none
+                @include mobile
+                    display: none
+            .contact-form-grid
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                @include tablet
+                    display: block
+                @include mobile
+                    display: block
+                .contact-form-item-benefits,
+                .contact-form-item-benefits-mobile
+                    font-weight: 500
+                    letter-spacing: -0.57px
+                    color: #f6f3ff
+                .contact-form-item-benefits
+                    font-size: 18px
+                    line-height: 2.17
+                    padding: 30px 30px 0 30px
+                    border-right: 1px solid #a3c7fa
+                    @include tablet
+                        display: none
+                    @include mobile
+                        display: none
+                .contact-form-item-benefits-mobile
+                    display: none
+                    font-size: 14px
+                    line-height: 1.71
+                    margin-bottom: 20px
+                    @include tablet
+                        display: block
+                    @include mobile
+                        display: block
+                .contact-form-item-form
+                    padding: 30px 30px 0 30px
+                    box-sizing: border-box
+                    @include tablet
+                        padding: 0
+                    @include mobile
+                        padding: 0
+                    form
+                        input
+                            display: block
+                            width: 356px
+                            height: 40px
+                            border-radius: 25px
+                            background-color: #fff
+                            font-size: 14px
+                            letter-spacing: -0.44px
+                            color: #6d7278
+                            padding: 5px 20px
+                            box-sizing: border-box
+                            border: none
+                            margin: 0 auto
+                            margin-bottom: 20px
+                            &:hover
+                                border: none
+                            @include tablet
+                                width: 330px
+                                letter-spacing: normal
+                                padding: 10px 20px
+                            @include mobile
+                                width: 100%
+                                letter-spacing: normal
+                                padding: 10px 20px
+                        button
+                            display: block
+                            width: 183px
+                            height: 40px
+                            border-radius: 25px
+                            background-color: #162990
+                            font-size: 14px
+                            font-weight: 500
+                            color: #fff
+                            margin: 0 auto
+                            border: none
+                            cursor: pointer
+                            &:hover
+                                background-color: #061667
+                            @include tablet
+                                font-weight: 600
