@@ -1,0 +1,8 @@
+<svg width="22" height="33" viewBox="0 0 22 33" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <circle fill="#4548DE" cx="11" cy="17" r="11"/>
+        <text font-family="Avenir-Heavy, Avenir" font-size="24" font-weight="600" letter-spacing="-.756" fill="#FFF">
+                    <tspan x="5" y="24">«</tspan>
+                </text>
+    </g>
+</svg>
