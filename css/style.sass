@@ -54,6 +54,11 @@ a
 .nav-main
     background-color: #3a16b7
     color: #fff
+    .container
+        @include tablet
+            max-width: 100%
+            padding-left: 50px
+            box-sizing: border-box
     .nav-main-grid
         display: flex
         justify-content: space-between
@@ -105,6 +110,8 @@ a
             color: #fff
             font-size: 14px
             font-weight: 500
+            @include tablet
+                width: 176px
             @include mobile
                 display: none
             img
@@ -311,10 +318,30 @@ a
            font-size: 14px
            font-weight: 600
            color: #fff
+           @include tablet
+            padding: 10px 26px
            @include mobile
-            padding: 5px 12px
-            font-size: 14px
+            padding: 5px 10px
+            margin: 0 0 6px 0
             font-weight: 500
+        &.tablet
+            display: none
+        &.mobile
+            display: none
+        @include tablet
+            &.desktop
+                display: none
+            &.tablet
+                display: block
+            &.mobile
+                display: none
+        @include mobile
+            &.desktop
+                display: none
+            &.tablet
+                display: none
+            &.mobile
+                display: block
 
 .statics
     position: relative
@@ -497,9 +524,20 @@ a
                     border-radius: 8px
                     box-shadow: 0 0 5px 2px rgba(122, 117, 184, 0.33)
                     color: #fff
-                    img
+                    .careers-list-item-image-desktop
                         display: block
                         border: 0
+                        @include tablet
+                            display: none
+                        @include mobile
+                            display: none
+                    .careers-list-item-image-mobile
+                        display: none
+                        border: 0
+                        @include tablet
+                            display: block
+                        @include mobile
+                            display: block
                     .careers-list-item-content
                         padding: 20px 20px 11.8px 20px
                         @include mobile
@@ -561,6 +599,10 @@ a
                         color: #fff
                         text-align: center
                         line-height: 2
+                        @include tablet
+                            top: 120px
+                        @include mobile
+                            top: 120px
             .careers-list-button
                 display: block
                 width: 280px
