@@ -1431,6 +1431,7 @@ a
             margin: 0 0 0 auto
 
 .profile
+    background-image: linear-gradient(to top, #fff, #f2f2f2)
     padding: 40px 0 100px 0
     @include tablet
         padding: 40px 0 90px 0
@@ -1513,13 +1514,24 @@ a
                     text-decoration: underline
 
 .why-study
+    background-color: #f2f2f2
     padding: 64px 0 40px 0
+    @include tablet
+        padding: 40px 0
+    @include mobile
+        padding: 40px 0 20px 0
     h2
         font-size: 36px
         font-weight: 600
         letter-spacing: -1.13px
         color: rgba(0, 0, 0, 0.85)
         margin: 0 0 40px 0
+        @include tablet
+            margin: 0 0 62px 0
+        @include mobile
+            font-size: 24px
+            letter-spacing: -0.76px
+            margin: 0 0 20px 0
     .why-study-highlight
         color: #6236ff
     .why-study-point
@@ -1528,16 +1540,127 @@ a
         display: grid
         grid-template-columns: repeat(4, 1fr)
         gap: 20px
+        @include tablet
+            overflow-x: scroll
+            overflow-y: hidden
+        @include mobile
+            overflow-x: scroll
+            overflow-y: hidden
         .why-study-item
             background-color: rgba(255, 255, 255, 0.6)
             border: solid 1px #502dcf
             border-radius: 8px
             padding: 25px 20px
+            box-sizing: border-box
+            @include tablet
+                width: 280px
+            @include mobile
+                width: 240px
             img
                 display: block
                 border: none
                 margin: 0 auto
                 margin-bottom: 10px
+            h3
+                font-size: 36px
+                font-weight: 600
+                letter-spacing: -1.13px
+                color: #866de0
+                text-align: center
+                margin: 0 0 11px 0
+            p
+                font-size: 14px
+                line-height: normal
+                color: #000
+                text-align: center
+                margin: 0
 
-    
-
+.description
+    padding: 0 0 60px 0
+    @include tablet
+        padding: 0 0 72px 0
+    @include mobile
+        background-color: #f2f2f2
+    .description-features
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        width: 880px
+        border-radius: 8px
+        box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.38)
+        background-color: #fff
+        padding: 20px 0
+        margin-bottom: 40px
+        @include tablet
+            width: 100%
+        @include mobile
+            grid-template-columns: repeat(3, auto)
+            width: 100%
+            margin-bottom: 30px
+        .description-feature
+            padding: 10px 0
+            box-sizing: border-box
+            border-right: 1px solid #d1d1d1
+            text-align: center
+            @include mobile
+                padding: 5px 0
+            &:last-of-type
+                margin-right: 0
+            h3
+                font-size: 18px
+                font-weight: 500
+                letter-spacing: -0.57px
+                color: #162990
+                margin: 0 0 7px 0
+                @include mobile
+                    font-size: 14px
+                    letter-spacing: -0.44px
+                    margin: 0 0 5px 0
+            p
+                font-size: 18px
+                letter-spacing: -0.57px
+                color: rgba(0, 0, 0, 0.85)
+                margin: 0
+                @include mobile
+                    font-size: 14px
+                    letter-spacing: -0.44px
+    .description-content
+        width: 880px
+        margin-bottom: 40px
+        @include tablet
+            width: 100%
+        @include mobile
+            width: 100%
+            margin-bottom: 30px
+        p
+            font-size: 16px
+            line-height: normal
+            color: rgba(0, 0, 0, 0.85)
+            margin: 0 0 20px 0
+    .description-buttons
+        display: flex
+        justify-content: left
+        @include tablet
+            justify-content: center
+        @include mobile
+            flex-direction: column
+            align-items: center
+        .description-button-primary,
+        .description-button-secondary
+            display: inline-block
+            width: 280px
+            height: 50px
+            border-radius: 8px
+            font-size: 16px
+            font-weight: 600
+            text-align: center
+            line-height: 3.2
+            color: #fff
+        .description-button-primary
+            background-color: #2b1b62
+            margin-right: 20px
+            @include mobile
+                margin-right: 0
+                margin-bottom: 20px
+        .description-button-secondary
+            background-image: linear-gradient(69deg, #6236ff 49%, #3d19bb 100%, #9b7fff)
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
