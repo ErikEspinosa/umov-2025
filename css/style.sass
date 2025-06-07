@@ -1579,8 +1579,6 @@ a
     padding: 0 0 60px 0
     @include tablet
         padding: 0 0 72px 0
-    @include mobile
-        background-color: #f2f2f2
     .description-features
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -1590,11 +1588,14 @@ a
         background-color: #fff
         padding: 20px 0
         margin-bottom: 40px
+        margin-top: -50px
         @include tablet
             width: 100%
+            margin-top: -60px
         @include mobile
             grid-template-columns: repeat(3, auto)
             width: 100%
+            margin-top: -40px
             margin-bottom: 30px
         .description-feature
             padding: 10px 0
@@ -1604,7 +1605,7 @@ a
             @include mobile
                 padding: 5px 0
             &:last-of-type
-                margin-right: 0
+                border-right: 0
             h3
                 font-size: 18px
                 font-weight: 500
@@ -1664,3 +1665,171 @@ a
         .description-button-secondary
             background-image: linear-gradient(69deg, #6236ff 49%, #3d19bb 100%, #9b7fff)
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+
+.breadcrumbs
+    padding: 16px 0
+    background-color: #fff
+    @include mobile
+        display: none
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        li
+            display: inline-flex
+            align-items: center
+            a
+                font-size: 14px
+                font-weight: 500
+                color: #000
+            .breadcrumbs-active
+                color: #7c7c7c
+
+.hero-detail
+    padding: 30px 0
+    background: url("../assets/hero-detail-background.webp")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    @include tablet
+        padding: 30px 0 122.6px 0
+    @include mobile
+        padding: 0 0 87.6px 0
+    .hero-detail-grid
+        display: grid
+        grid-template-columns: min-content 1fr
+        gap: 20px
+        @include mobile
+            grid-template-columns: 1fr
+            gap: 30px
+        .hero-detail-content
+            .hero-detail-image-desktop,
+            .hero-detail-image-mobile
+                margin: 0 0 20px 0
+            .hero-detail-image-desktop
+                @include tablet
+                    display: none
+                @include mobile
+                    display: none
+            .hero-detail-image-mobile
+                display: none
+                @include tablet
+                    display: block
+                @include mobile
+                    display: block
+                    width: 100%
+                    height: auto
+            h1
+                font-size: 36px
+                font-weight: 600
+                color: #fff
+                margin: 0
+                @include tablet
+                    margin: 0 0 20px 0
+                @include mobile
+                    font-size: 24px
+                    margin: 0 0 10px 0
+            .hero-detail-title-small
+                display: block
+                font-size: 18px
+                font-weight: 300
+                color: #5ed6db
+                @include mobile
+                    display: inline-block
+                    font-size: 24px
+                    font-weight: normal
+            .hero-detail-title-point
+                color: #5ed6db
+            .hero-detail-divider
+                width: 25px
+                height: 1px
+                background-color: #fff
+                margin: 12px 0
+                @include tablet
+                    display: none
+                @include mobile
+                    display: none
+            p
+                font-size: 18px
+                font-weight: 500
+                color: rgba(255, 255, 255, 0.85)
+                margin: 0
+                @include tablet
+                    line-height: normal
+                @include mobile
+                    line-height: normal
+        .hero-detail-form
+            background-color: #fff
+            padding: 20px 20px 47px 20px
+            border-radius: 8px
+            border: solid 1px #866de0
+            @include tablet
+                padding: 20px 20px 40px 20px
+            @include mobile
+                padding: 20px 20px 40px 20px
+            h2
+                font-size: 16px
+                font-weight: 600
+                letter-spacing: -0.5px
+                line-height: normal
+                color: #162990
+                margin: 0 0 11px 0
+            ul
+                list-style: none
+                margin: 0
+                margin-bottom: 56px
+                padding: 0
+                @include tablet
+                    margin-bottom: 30px
+                @include mobile
+                    margin-bottom: 30px
+                li
+                    font-size: 14px
+                    letter-spacing: -0.44px
+                    margin-bottom: 10px
+                    color: #162990
+                .hero-detail-form-highlight
+                    color: #fa6400
+            form
+                input
+                    width: 100%
+                    height: 40px
+                    border-radius: 7px
+                    border: solid 1px #979797
+                    background-color: #fff
+                    box-sizing: border-box
+                    padding: 10px
+                    font-size: 14px
+                    letter-spacing: -0.4px
+                    color: #000
+                    margin-bottom: 10px
+                    &:last-of-type
+                        margin-bottom: 20px
+                        @include tablet
+                            margin-bottom: 30px
+                        @include mobile
+                            margin-bottom: 30px
+                button
+                    display: block
+                    width: 199px
+                    height: 40px
+                    border: none
+                    border-radius: 8px
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+                    background-color: #fa6400
+                    font-size: 14px
+                    font-weight: 600
+                    text-align: center
+                    color: #fff
+                    margin: 0 auto
+                    @include tablet
+                        width: 100%
+                        height: 50px
+                        font-size: 16px
+                        box-shadow: none
+                    @include mobile
+                        width: 100%
+                        height: 50px
+                        font-size: 16px
+                        box-shadow: none
+
