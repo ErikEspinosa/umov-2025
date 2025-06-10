@@ -616,6 +616,9 @@ a img {
     padding: 0 0 40px 0;
   }
 }
+.careers.with-top-padding {
+  padding-top: 39.5px;
+}
 .careers .careers-filter {
   margin-bottom: 40px;
 }
@@ -793,6 +796,16 @@ a img {
   box-shadow: 0 0 5px 2px rgba(122, 117, 184, 0.33);
   color: #fff;
 }
+@media screen and (min-width: 481px) and (max-width: 820px) {
+  .careers .careers-grid .careers-item-list .careers-list-grid .careers-list-item.hide-tablet {
+    display: none;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .careers .careers-grid .careers-item-list .careers-list-grid .careers-list-item.hide-mobile {
+    display: none;
+  }
+}
 .careers .careers-grid .careers-item-list .careers-list-grid .careers-list-item .careers-list-item-image-desktop {
   display: block;
   border: 0;
@@ -924,10 +937,32 @@ a img {
   line-height: 3.2;
   margin: 0 auto;
 }
+.careers .careers-grid .careers-item-list .careers-list-button.hide-desktop {
+  display: none;
+}
+@media screen and (min-width: 481px) and (max-width: 820px) {
+  .careers .careers-grid .careers-item-list .careers-list-button.hide-desktop {
+    display: block;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .careers .careers-grid .careers-item-list .careers-list-button.hide-desktop {
+    display: block;
+  }
+}
 .careers .careers-grid .careers-item-list .careers-list-button:hover {
   background-color: #ff5c18;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
   text-decoration: none;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .careers .careers-grid .careers-item-list .careers-list-button {
+    width: 224px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 3;
+  }
 }
 
 .testimonials {
@@ -2560,6 +2595,14 @@ a img {
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .breadcrumbs {
     display: none;
+  }
+}
+.breadcrumbs.with-underline {
+  border-bottom: solid 1px #c1c1c1;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .breadcrumbs.show-mobile {
+    display: block;
   }
 }
 .breadcrumbs ul {

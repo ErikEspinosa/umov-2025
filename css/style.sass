@@ -414,6 +414,8 @@ a
         padding: 0 0 70px 0
     @include mobile
         padding: 0 0 40px 0
+    &.with-top-padding
+        padding-top: 39.5px
     .careers-filter
         margin-bottom: 40px
         @include tablet
@@ -524,6 +526,12 @@ a
                     border-radius: 8px
                     box-shadow: 0 0 5px 2px rgba(122, 117, 184, 0.33)
                     color: #fff
+                    &.hide-tablet
+                        @include tablet
+                            display: none
+                    &.hide-mobile
+                        @include mobile
+                            display: none
                     .careers-list-item-image-desktop
                         display: block
                         border: 0
@@ -615,10 +623,22 @@ a
                 text-align: center
                 line-height: 3.2
                 margin: 0 auto
+                &.hide-desktop
+                    display: none
+                    @include tablet
+                        display: block
+                    @include mobile
+                        display: block
                 &:hover
                     background-color: #ff5c18
                     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5)
                     text-decoration: none
+                @include mobile
+                    width: 224px
+                    height: 40px
+                    border-radius: 4px
+                    font-size: 14px
+                    line-height: 3
 
 .testimonials
     background: linear-gradient(242deg, #8c62f4, #060e64)
@@ -1671,6 +1691,11 @@ a
     background-color: #fff
     @include mobile
         display: none
+    &.with-underline
+        border-bottom: solid 1px #c1c1c1
+    &.show-mobile
+        @include mobile
+            display: block
     ul
         list-style: none
         margin: 0
