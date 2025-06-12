@@ -389,19 +389,21 @@
                         </div>
                         <div class="testimonials-students-card">
                             <div class="testimonials-students-card-image">
-                                <img src="./assets/testimonial-1.webp" alt="Testimonial" width="40" height="40" loading="lazy">
+                                <img id="testimonial-image-mobile" alt="Testimonial 1" width="40" height="40" loading="lazy">
+                            </div>
+                            <div class="testimonials-students-card-icon">
+                                <img src="./assets/testimonials-icon.svg" alt="Testimonial" width="22" height="33" loading="lazy">
                             </div>
                             <div class="testimonials-students-card-content">
-                                <img src="./assets/testimonials-icon.svg" alt="Testimonial" width="22" height="33" loading="lazy">
-                                <p>Soy egresada de UMOV; quiero darle las gracias por haber sido parte de mi formación como profesionista.</p>
+                                <p id="testimonial-description-mobile"></p>
                             </div>
                         </div>
                         <div class="testimonials-students-images">
                             <div class="testimonials-students-image">
-                                <img src="./assets/student-1.webp" alt="Alumnos" width="280" height="517" loading="lazy">
+                                <img id="student-1" alt="Alumno UMOV 1" width="280" height="517" loading="lazy">
                             </div> 
                             <div class="testimonials-students-image">
-                                <img src="./assets/student-2.webp" alt="Alumnos" width="280" height="517" loading="lazy">
+                                <img id="student-2" alt="Alumno UMOV 2" width="280" height="517" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -411,10 +413,10 @@
                             <div class="testimonials-cards-item">
                                 <div class="testimonials-cards-item-content">
                                     <img src="./assets/testimonials-icon.svg" alt="Testimonial" width="22" height="33" loading="lazy">
-                                    <p>Soy egresada de UMOV; quiero darle las gracias por haber sido parte de mi formación como profesionista.  Excelentes maestros y siempre disponibles para sus alumnos.</p>
+                                    <p id="testimonial-description-1"></p>
                                 </div>
                                 <div class="testimonials-cards-item-image">
-                                    <img src="./assets/testimonial-1.webp" alt="Testimonial" width="60" height="60" loading="lazy">
+                                    <img id="testimonial-image-1" alt="Testimonial 1" width="60" height="60" loading="lazy">
                                 </div>
                             </div>
                             <div class="testimonials-cards-block-2"></div>
@@ -424,19 +426,19 @@
                             <div class="testimonials-cards-item">
                                 <div class="testimonials-cards-item-content">
                                     <img src="./assets/testimonials-icon.svg" alt="Testimonial" width="22" height="33" loading="lazy">
-                                    <p>Me gusta porque es una Universidad pensada no solo para estudiantes, sino para personas que ya tenemos una vida laboral y necesitamos accesibilidad.</p>
+                                    <p id="testimonial-description-2"></p>
                                 </div>
                                 <div class="testimonials-cards-item-image">
-                                    <img src="./assets/testimonial-2.webp" alt="Testimonial" width="60" height="60" loading="lazy">
+                                    <img id="testimonial-image-2" alt="Testimonial 2" width="60" height="60" loading="lazy">
                                 </div>
                             </div>
                             <div class="testimonials-cards-item">
                                 <div class="testimonials-cards-item-content">
                                     <img src="./assets/testimonials-icon.svg" alt="Testimonial" width="22" height="33" loading="lazy">
-                                    <p>Me encantan los horarios libres.  Uno puede estudiar a su ritmo.  Me la recomendó mi hermano y quedé encantada.   Estoy sumamente agradecida por la oportunidad de continuar mis estudios</p>
+                                    <p id="testimonial-description-3"></p>
                                 </div>
                                 <div class="testimonials-cards-item-image">
-                                    <img src="./assets/testimonial-3.webp" alt="Testimonial" width="60" height="60" loading="lazy">
+                                    <img id="testimonial-image-3" alt="Testimonial 3" width="60" height="60" loading="lazy">
                                 </div>
                             </div>
                             <div class="testimonials-cards-block-4"></div>
@@ -654,5 +656,11 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script>
+        loadTestimonialsImages();
+        loadTestimonials();
+        createOverlay('statics-grid');
+        createOverlay('press-grid');
+    </script>
 </body>
 </html>

@@ -1044,7 +1044,7 @@ a img {
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .testimonials .testimonials-grid .testimonials-students .testimonials-students-card {
     display: grid;
-    grid-template-columns: min-content auto;
+    grid-template-columns: min-content min-content 1fr;
     gap: 8px;
     background-color: #fff;
     padding: 12px;
@@ -1056,13 +1056,9 @@ a img {
   display: flex;
   align-items: center;
 }
-.testimonials .testimonials-grid .testimonials-students .testimonials-students-card .testimonials-students-card-content {
-  display: grid;
-  grid-template-columns: min-content auto;
-  gap: 8px;
-}
-.testimonials .testimonials-grid .testimonials-students .testimonials-students-card .testimonials-students-card-content img {
-  padding-top: 20px;
+.testimonials .testimonials-grid .testimonials-students .testimonials-students-card .testimonials-students-card-icon {
+  display: flex;
+  align-items: center;
 }
 .testimonials .testimonials-grid .testimonials-students .testimonials-students-card .testimonials-students-card-content p {
   font-size: 14px;
