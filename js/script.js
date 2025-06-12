@@ -41,6 +41,34 @@ const TESTIMONIALS = [
 ]
 const TESTIMONIALS_PATH = '../assets/testimonials/';
 
+// Resize screen
+let documentWidth = document.body.clientWidth
+let isMobile = documentWidth <= 480
+let isTablet = documentWidth >= 481 && documentWidth <= 820
+
+// Menu
+const menuItems = document.querySelectorAll('.nav-main-links-item');
+const submenuWrapper = document.querySelector('.nav-main-submenu-wrapper');
+menuItems && menuItems.forEach(item => {
+    const submenu = item.querySelector(".nav-main-links-submenu");
+    item.addEventListener("mouseover", () => {
+        if (submenuWrapper) submenuWrapper.style.display = "block"
+        submenu && submenu.classList.add("show-submenu")
+    })
+    item.addEventListener("mouseout", () => {
+        if (submenuWrapper) submenuWrapper.style.display = "none"
+        submenu && submenu.classList.remove("show-submenu")
+    })
+})
+
+const setBodyMargin = () => {
+    const navbar = document.querySelector('.nav-main');
+    if (navbar) {
+        const navBarRects = navbar.getClientRects();
+        document.body.style.marginTop = `${navBarRects[0].height}px`;
+    }
+}
+
 const loadTestimonialsImages = () => {
     const student1 = document.querySelector('#student-1');
     const student2 = document.querySelector('#student-2');
@@ -51,8 +79,8 @@ const loadTestimonialsImages = () => {
     while (index1 === index2) {
         index2 = Math.floor(Math.random() * totalImages);
     }
-    student1.src = `${IMAGES_PATH}${IMAGES[index1]}`;
-    student2.src = `${IMAGES_PATH}${IMAGES[index2]}`;
+    if (student1) student1.src = `${IMAGES_PATH}${IMAGES[index1]}`;
+    if (student2) student2.src = `${IMAGES_PATH}${IMAGES[index2]}`;
 }
 
 const loadTestimonials = () => {
@@ -72,19 +100,19 @@ const loadTestimonials = () => {
         index3 = Math.floor(Math.random() * totalTestimonials);
     } while (index1 === index2 || index1 === index3 || index2 === index3);
     index4 = Math.floor(Math.random() * totalTestimonials);
-    testimonialDesc1.textContent = TESTIMONIALS[index1].id + ') ' + TESTIMONIALS[index1].description;
-    testimonialImage1.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index1].image}`;
-    testimonialDesc2.textContent = TESTIMONIALS[index2].id + ') ' + TESTIMONIALS[index2].description;
-    testimonialImage2.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index2].image}`;
-    testimonialDesc3.textContent = TESTIMONIALS[index3].id + ') ' + TESTIMONIALS[index3].description;
-    testimonialImage3.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index3].image}`;
-    testimonialDescMobile.textContent = TESTIMONIALS[index4].id + ') ' + TESTIMONIALS[index4].description;
-    testimonialImageMobile.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index4].image}`;
+    if (testimonialDesc1) testimonialDesc1.textContent = TESTIMONIALS[index1].id + ') ' + TESTIMONIALS[index1].description;
+    if (testimonialImage1) testimonialImage1.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index1].image}`;
+    if (testimonialDesc2) testimonialDesc2.textContent = TESTIMONIALS[index2].id + ') ' + TESTIMONIALS[index2].description;
+    if (testimonialImage2) testimonialImage2.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index2].image}`;
+    if (testimonialDesc3) testimonialDesc3.textContent = TESTIMONIALS[index3].id + ') ' + TESTIMONIALS[index3].description;
+    if (testimonialImage3) testimonialImage3.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index3].image}`;
+    if (testimonialDescMobile) testimonialDescMobile.textContent = TESTIMONIALS[index4].id + ') ' + TESTIMONIALS[index4].description;
+    if (testimonialImageMobile) testimonialImageMobile.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index4].image}`;
 }
 
 const createOverlay = (elementClass, width) => {
     if (elementClass) {
-        const element = document.querySelector(`.${elementClass}`);
+        const element = document.querySelector(`.${elementClass}`) || null;
         if (element) {
             const rects = element.getClientRects();
             const overlay = document.createElement('div');
@@ -99,3 +127,19 @@ const createOverlay = (elementClass, width) => {
         }
     }
 }
+
+window.addEventListener("load", () => {
+    setBodyMargin();
+    createOverlay('statics-grid');
+    createOverlay('press-grid');
+    createOverlay('why-study-grid', 80);
+    loadTestimonialsImages();
+    loadTestimonials();
+});
+
+window.addEventListener("resize", () => {
+    documentWidth = document.body.clientWidth
+    isMobile = documentWidth <= 480
+    isTablet = documentWidth >= 481 && documentWidth <= 768
+    setBodyMargin();
+});

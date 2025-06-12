@@ -37,8 +37,12 @@ a img {
 }
 
 .nav-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #3a16b7;
   color: #fff;
+  z-index: 999;
 }
 @media screen and (min-width: 481px) and (max-width: 820px) {
   .nav-main .container {
@@ -97,6 +101,7 @@ a img {
   padding: 0;
 }
 .nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item {
+  position: relative;
   display: inline-block;
   margin-right: 25px;
 }
@@ -109,6 +114,27 @@ a img {
   display: inline-block;
   width: 12px;
   height: 12px;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item .nav-main-links-submenu {
+  display: none;
+  position: absolute;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  z-index: 1;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item .nav-main-links-submenu li {
+  margin-bottom: 12px;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item .nav-main-links-submenu li a {
+  font-size: 16px;
+  color: #fff;
+}
+.nav-main .nav-main-grid .nav-main-links .nav-main-links-items .nav-main-links-item .nav-main-links-submenu.show-submenu {
+  display: block;
 }
 .nav-main .nav-main-grid .nav-main-login {
   display: flex;
@@ -142,6 +168,14 @@ a img {
     display: flex;
     align-items: center;
   }
+}
+.nav-main .nav-main-submenu-wrapper {
+  display: none;
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  height: 540px;
+  background-color: #290e88;
 }
 
 .contact-bar {
@@ -476,7 +510,7 @@ a img {
   right: 0;
   width: 40px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
-  z-index: 999;
+  z-index: 998;
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .overlay {

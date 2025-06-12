@@ -52,8 +52,12 @@ a
         max-width: 350px
 
 .nav-main
+    position: fixed
+    top: 0
+    width: 100%
     background-color: #3a16b7
     color: #fff
+    z-index: 999
     .container
         @include tablet
             max-width: 100%
@@ -90,6 +94,7 @@ a
                 margin: 0
                 padding: 0
                 .nav-main-links-item
+                    position: relative
                     display: inline-block
                     margin-right: 25px
                     a
@@ -100,6 +105,22 @@ a
                             display: inline-block
                             width: 12px
                             height: 12px
+                    .nav-main-links-submenu
+                        display: none
+                        position: absolute
+                        min-width: max-content
+                        list-style: none
+                        margin: 0
+                        padding: 0
+                        padding-top: 50px
+                        z-index: 1
+                        li
+                            margin-bottom: 12px
+                            a
+                                font-size: 16px
+                                color: #fff
+                        &.show-submenu
+                            display: block
         .nav-main-login
             display: flex
             justify-content: center
@@ -121,6 +142,13 @@ a
             @include mobile
                 display: flex
                 align-items: center
+    .nav-main-submenu-wrapper
+        display: none
+        position: absolute
+        top: 55px
+        width: 100%
+        height: 540px
+        background-color: #290e88
 
 .contact-bar
     height: 45px
@@ -349,7 +377,7 @@ a
     right: 0
     width: 40px
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
-    z-index: 999
+    z-index: 998
     @include mobile
         display: block
 
