@@ -10,7 +10,7 @@ const IMAGES = [
         'student-9.webp',
         'student-10.webp',
     ]
-const IMAGES_PATH = '../assets/students/';
+const IMAGES_PATH = './assets/students/';
 
 const TESTIMONIALS = [
     {
@@ -39,7 +39,7 @@ const TESTIMONIALS = [
         description: 'Me encantan los horarios libres. Uno puede estudiar a su ritmo. Me la recomendó mi hermano y quedé encantada. Estoy sumamente agradecida por la oportunidad de continuar mis estudios'
     }
 ]
-const TESTIMONIALS_PATH = '../assets/testimonials/';
+const TESTIMONIALS_PATH = './assets/testimonials/';
 
 // Resize screen
 let documentWidth = document.body.clientWidth
