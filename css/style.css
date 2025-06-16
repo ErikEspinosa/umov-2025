@@ -300,6 +300,8 @@ a img {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+  min-height: 660px;
+  box-sizing: border-box;
   padding: 56px 0 21px 0;
 }
 @media screen and (min-width: 481px) and (max-width: 820px) {
@@ -424,32 +426,32 @@ a img {
   background-color: #ffc936;
   text-decoration: none;
 }
-.hero-main .hero-main-filter {
+.hero-main .hero-main-filters {
   margin-bottom: 26px;
 }
 @media screen and (min-width: 481px) and (max-width: 820px) {
-  .hero-main .hero-main-filter {
+  .hero-main .hero-main-filters {
     margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-main .hero-main-filter {
+  .hero-main .hero-main-filters {
     margin-bottom: 10px;
   }
 }
-.hero-main .hero-main-filter a {
+.hero-main .hero-main-filters a {
   display: inline-block;
   font-size: 18px;
   letter-spacing: -0.57px;
   color: rgba(188, 188, 188, 0.74);
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-main .hero-main-filter a {
+  .hero-main .hero-main-filters a {
     font-size: 14px;
     letter-spacing: -0.44px;
   }
 }
-.hero-main .hero-main-filter .hero-main-filter-active {
+.hero-main .hero-main-filters .hero-main-filter-active {
   color: #fff;
   font-weight: 600;
 }
@@ -475,31 +477,31 @@ a img {
     font-weight: 500;
   }
 }
-.hero-main .hero-main-items.tablet {
+.hero-main .hero-main-items.hero-main-items-tablet {
   display: none;
 }
-.hero-main .hero-main-items.mobile {
+.hero-main .hero-main-items.hero-main-items-mobile {
   display: none;
 }
 @media screen and (min-width: 481px) and (max-width: 820px) {
-  .hero-main .hero-main-items.desktop {
+  .hero-main .hero-main-items.hero-main-items-desktop {
     display: none;
   }
-  .hero-main .hero-main-items.tablet {
+  .hero-main .hero-main-items.hero-main-items-tablet {
     display: block;
   }
-  .hero-main .hero-main-items.mobile {
+  .hero-main .hero-main-items.hero-main-items-mobile {
     display: none;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-main .hero-main-items.desktop {
+  .hero-main .hero-main-items.hero-main-items-desktop {
     display: none;
   }
-  .hero-main .hero-main-items.tablet {
+  .hero-main .hero-main-items.hero-main-items-tablet {
     display: none;
   }
-  .hero-main .hero-main-items.mobile {
+  .hero-main .hero-main-items.hero-main-items-mobile {
     display: block;
   }
 }

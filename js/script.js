@@ -128,8 +128,32 @@ const createOverlay = (elementClass, width) => {
     }
 }
 
+const filterItems = (filterType) => {
+    const allFilters = document.querySelectorAll('.hero-main-filter');
+    const allItems = document.querySelectorAll('.hero-main-items');
+    const filter = document.querySelector(`.hero-main-filter-${filterType}`);  
+    const items = document.querySelector(`.hero-main-items-${filterType}`);
+    const activeClass = 'hero-main-filter-active';
+
+    allFilters && allFilters.forEach(element => {
+        element.classList.remove(activeClass);
+    })
+    filter && filter.classList.add(activeClass);
+
+    allItems && allItems.forEach(element => {
+        element.style.display = 'none';
+    });
+    if (items) items.style.display = 'block';
+}
+
+const heroFilterCareers = document.querySelector('.hero-main-filter-careers');
+const heroFilterMasters = document.querySelector('.hero-main-filter-masters');
+heroFilterCareers.addEventListener('click', () => { filterItems('careers'); });
+heroFilterMasters.addEventListener('click', () => { filterItems('masters'); });
+
 window.addEventListener("load", () => {
     setBodyMargin();
+    // filterItems('careers');
     createOverlay('statics-grid');
     createOverlay('press-grid');
     createOverlay('why-study-grid', 80);

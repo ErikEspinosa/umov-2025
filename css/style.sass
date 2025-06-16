@@ -238,6 +238,8 @@ a
     background-repeat: no-repeat
     background-size: cover
     color: #fff
+    min-height: 660px
+    box-sizing: border-box
     padding: 56px 0 21px 0
     @include tablet
         padding: 56px 0 16px 0
@@ -319,7 +321,7 @@ a
             &:hover
                 background-color: #ffc936
                 text-decoration: none
-    .hero-main-filter
+    .hero-main-filters
         margin-bottom: 26px
         @include tablet
             margin-bottom: 20px
@@ -352,23 +354,23 @@ a
             padding: 5px 10px
             margin: 0 0 6px 0
             font-weight: 500
-        &.tablet
+        &.hero-main-items-tablet
             display: none
-        &.mobile
+        &.hero-main-items-mobile
             display: none
         @include tablet
-            &.desktop
+            &.hero-main-items-desktop
                 display: none
-            &.tablet
+            &.hero-main-items-tablet
                 display: block
-            &.mobile
+            &.hero-main-items-mobile
                 display: none
         @include mobile
-            &.desktop
+            &.hero-main-items-desktop
                 display: none
-            &.tablet
+            &.hero-main-items-tablet
                 display: none
-            &.mobile
+            &.hero-main-items-mobile
                 display: block
 
 .overlay
