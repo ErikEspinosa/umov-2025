@@ -311,6 +311,7 @@ a img {
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .hero-main {
+    min-height: 476px;
     padding: 82px 0 10px 0;
   }
 }
@@ -455,6 +456,9 @@ a img {
   color: #fff;
   font-weight: 600;
 }
+.hero-main .hero-main-items {
+  display: none;
+}
 .hero-main .hero-main-items a {
   display: inline-block;
   background-color: #162990;
@@ -475,34 +479,6 @@ a img {
     padding: 5px 10px;
     margin: 0 0 6px 0;
     font-weight: 500;
-  }
-}
-.hero-main .hero-main-items.hero-main-items-tablet {
-  display: none;
-}
-.hero-main .hero-main-items.hero-main-items-mobile {
-  display: none;
-}
-@media screen and (min-width: 481px) and (max-width: 820px) {
-  .hero-main .hero-main-items.hero-main-items-desktop {
-    display: none;
-  }
-  .hero-main .hero-main-items.hero-main-items-tablet {
-    display: block;
-  }
-  .hero-main .hero-main-items.hero-main-items-mobile {
-    display: none;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .hero-main .hero-main-items.hero-main-items-desktop {
-    display: none;
-  }
-  .hero-main .hero-main-items.hero-main-items-tablet {
-    display: none;
-  }
-  .hero-main .hero-main-items.hero-main-items-mobile {
-    display: block;
   }
 }
 
@@ -701,6 +677,7 @@ a img {
   .careers .careers-filter .careers-filter-links a {
     font-size: 18px;
     letter-spacing: -0.57px;
+    margin-right: 0px;
   }
 }
 .careers .careers-filter .careers-filter-links .careers-filter-active {

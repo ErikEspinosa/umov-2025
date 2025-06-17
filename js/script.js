@@ -132,18 +132,28 @@ const filterItems = (filterType) => {
     const allFilters = document.querySelectorAll('.hero-main-filter');
     const allItems = document.querySelectorAll('.hero-main-items');
     const filter = document.querySelector(`.hero-main-filter-${filterType}`);  
-    const items = document.querySelector(`.hero-main-items-${filterType}`);
+    const items = document.querySelectorAll(`.hero-main-items-${filterType}`);
     const activeClass = 'hero-main-filter-active';
 
     allFilters && allFilters.forEach(element => {
         element.classList.remove(activeClass);
-    })
+    });
     filter && filter.classList.add(activeClass);
 
     allItems && allItems.forEach(element => {
         element.style.display = 'none';
     });
-    if (items) items.style.display = 'block';
+    items.forEach(element => {
+        if (isMobile && element.classList.contains('hero-main-items-mobile')) {
+            element.style.display = 'block';
+        }
+        if (isTablet && element.classList.contains('hero-main-items-tablet')) {
+            element.style.display = 'block';
+        }
+        if (!isMobile && !isTablet && element.classList.contains('hero-main-items-desktop')) {
+            element.style.display = 'block';
+        }
+    });
 }
 
 const heroFilterCareers = document.querySelector('.hero-main-filter-careers');
@@ -153,7 +163,7 @@ heroFilterMasters.addEventListener('click', () => { filterItems('masters'); });
 
 window.addEventListener("load", () => {
     setBodyMargin();
-    // filterItems('careers');
+    filterItems('careers');
     createOverlay('statics-grid');
     createOverlay('press-grid');
     createOverlay('why-study-grid', 80);
@@ -164,6 +174,7 @@ window.addEventListener("load", () => {
 window.addEventListener("resize", () => {
     documentWidth = document.body.clientWidth
     isMobile = documentWidth <= 480
-    isTablet = documentWidth >= 481 && documentWidth <= 768
+    isTablet = documentWidth >= 481 && documentWidth <= 820
     setBodyMargin();
+    filterItems('careers');
 });

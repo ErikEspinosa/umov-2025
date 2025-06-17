@@ -244,6 +244,7 @@ a
     @include tablet
         padding: 56px 0 16px 0
     @include mobile
+        min-height: 476px
         padding: 82px 0 10px 0
     .hero-main-content
         text-align: center
@@ -339,6 +340,7 @@ a
             color: #fff
             font-weight: 600
     .hero-main-items
+        display: none
         a
            display: inline-block
            background-color: #162990
@@ -354,24 +356,6 @@ a
             padding: 5px 10px
             margin: 0 0 6px 0
             font-weight: 500
-        &.hero-main-items-tablet
-            display: none
-        &.hero-main-items-mobile
-            display: none
-        @include tablet
-            &.hero-main-items-desktop
-                display: none
-            &.hero-main-items-tablet
-                display: block
-            &.hero-main-items-mobile
-                display: none
-        @include mobile
-            &.hero-main-items-desktop
-                display: none
-            &.hero-main-items-tablet
-                display: none
-            &.hero-main-items-mobile
-                display: block
 
 .overlay
     display: none
@@ -470,6 +454,7 @@ a
                 @include mobile
                     font-size: 18px
                     letter-spacing: -0.57px
+                    margin-right: 0px
             .careers-filter-active
                 font-weight: bold
                 letter-spacing: normal
