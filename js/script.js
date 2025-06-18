@@ -61,6 +61,62 @@ menuItems && menuItems.forEach(item => {
     })
 })
 
+// Mobile menu
+let isMobileMenuVisible = false;
+const mobileMenu = document.querySelector('.mobile-menu');
+
+const closeMobileSubmenus = () => {
+    const mobileSubmenus = document.querySelectorAll('.mobile-menu-item-submenu');
+    mobileSubmenus && mobileSubmenus.forEach(submenu => {
+        submenu.style.display = "none"
+    })
+    const mobileMenuItemsName = document.querySelectorAll('.mobile-menu-item-name');
+    mobileMenuItemsName && mobileMenuItemsName.forEach(item => {
+        item.classList.remove('mobile-menu-item-open');
+        item.classList.add('mobile-menu-item-close');
+    })
+}
+
+const openMobileMenu = () => {
+    if (mobileMenu) mobileMenu.style.display = 'block';
+    isMobileMenuVisible = !isMobileMenuVisible;
+}
+
+const closeMobileMenu = () => {
+    if (mobileMenu) mobileMenu.style.display = 'none';
+    closeMobileSubmenus();
+    isMobileMenuVisible = !isMobileMenuVisible;
+}
+
+const navMainMobileMenu = document.querySelector('.nav-main-mobile-menu-icon');
+navMainMobileMenu && navMainMobileMenu.addEventListener('click', () => {
+    openMobileMenu();
+})
+
+const mobileMenuClose = document.querySelector('.mobile-menu-close');
+mobileMenuClose && mobileMenuClose.addEventListener('click', () => {
+    closeMobileMenu();
+})
+
+const mobileMenuItems = document.querySelectorAll(".mobile-menu-item");
+mobileMenuItems && mobileMenuItems.forEach(item => {
+    let isSubmenuVisible = false;
+    const mobileMenuItemTitle = item.querySelector('.mobile-menu-item-title');
+    const mobileMenuItemName = item.querySelector('.mobile-menu-item-name');
+    const mobileMenuItemSubmenu = item.querySelector('.mobile-menu-item-submenu');
+    mobileMenuItemTitle && mobileMenuItemTitle.addEventListener('click', () => {
+        if (mobileMenuItemSubmenu) mobileMenuItemSubmenu.style.display = isSubmenuVisible ? 'none' : 'block';
+        if (isSubmenuVisible) {
+            mobileMenuItemName.classList.remove('mobile-menu-item-open');
+            mobileMenuItemName.classList.add('mobile-menu-item-close');
+        } else {
+            mobileMenuItemName.classList.remove('mobile-menu-item-close');
+            mobileMenuItemName.classList.add('mobile-menu-item-open');
+        }
+        isSubmenuVisible = !isSubmenuVisible;
+    })
+})
+
 const setBodyMargin = () => {
     const navbar = document.querySelector('.nav-main');
     if (navbar) {
