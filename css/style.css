@@ -753,6 +753,11 @@ a img {
 .careers.with-top-padding {
   padding-top: 39.5px;
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .careers.with-top-padding {
+    padding-top: 18.5px;
+  }
+}
 .careers .careers-filters {
   margin-bottom: 40px;
 }

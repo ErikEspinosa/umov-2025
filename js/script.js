@@ -117,11 +117,30 @@ mobileMenuItems && mobileMenuItems.forEach(item => {
     })
 })
 
+// Funtions
 const setBodyMargin = () => {
     const navbar = document.querySelector('.nav-main');
     if (navbar) {
         const navBarRects = navbar.getClientRects();
         document.body.style.marginTop = `${navBarRects[0].height}px`;
+    }
+}
+
+const createOverlay = (elementClass, width) => {
+    if (elementClass) {
+        const element = document.querySelector(`.${elementClass}`) || null;
+        if (element) {
+            const rects = element.getClientRects();
+            const overlay = document.createElement('div');
+            overlay.classList.add(`${elementClass}-overlay`);
+            overlay.classList.add('overlay');
+            overlay.style.top = `${rects[0].top}px`;
+            overlay.style.height = `${rects[0].height}px`;
+            if (width) {
+                overlay.style.width = `${width}px`;
+            }
+            document.body.appendChild(overlay);
+        }
     }
 }
 
@@ -164,24 +183,6 @@ const loadTestimonials = () => {
     if (testimonialImage3) testimonialImage3.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index3].image}`;
     if (testimonialDescMobile) testimonialDescMobile.textContent = TESTIMONIALS[index4].id + ') ' + TESTIMONIALS[index4].description;
     if (testimonialImageMobile) testimonialImageMobile.src = `${TESTIMONIALS_PATH}${TESTIMONIALS[index4].image}`;
-}
-
-const createOverlay = (elementClass, width) => {
-    if (elementClass) {
-        const element = document.querySelector(`.${elementClass}`) || null;
-        if (element) {
-            const rects = element.getClientRects();
-            const overlay = document.createElement('div');
-            overlay.classList.add(`${elementClass}-overlay`);
-            overlay.classList.add('overlay');
-            overlay.style.top = `${rects[0].top}px`;
-            overlay.style.height = `${rects[0].height}px`;
-            if (width) {
-                overlay.style.width = `${width}px`;
-            }
-            document.body.appendChild(overlay);
-        }
-    }
 }
 
 const filterItems = (e, filterType) => {
@@ -234,6 +235,7 @@ const filterItemsCareers = (e, filterType) => {
     if (item) item.style.display = 'grid';
 }
 
+// Event listeners
 const selectCareers = document.querySelector('#select-careers');
 selectCareers && selectCareers.addEventListener('change', (e) => {
     const selectedOption = selectCareers.value;
@@ -252,19 +254,20 @@ heroFilterMasters && heroFilterMasters.addEventListener('click', (e) => { filter
 
 window.addEventListener("load", (e) => {
     setBodyMargin();
-    filterItems(e, 'careers');
-    filterItemsCareers(e, 'careers');
     createOverlay('statics-grid');
     createOverlay('press-grid');
     createOverlay('why-study-grid', 80);
     loadTestimonialsImages();
     loadTestimonials();
+    filterItems(e, 'careers');
+    filterItemsCareers(e, 'careers');
 });
 
-window.addEventListener("resize", () => {
+window.addEventListener("resize", (e) => {
     documentWidth = document.body.clientWidth
     isMobile = documentWidth <= 480
     isTablet = documentWidth >= 481 && documentWidth <= 820
     setBodyMargin();
-    filterItems('careers');
+    filterItems(e, 'careers');
+    filterItemsCareers(e, 'careers');
 });
