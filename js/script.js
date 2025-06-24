@@ -184,7 +184,8 @@ const createOverlay = (elementClass, width) => {
     }
 }
 
-const filterItems = (filterType) => {
+const filterItems = (e, filterType) => {
+    e.preventDefault();
     const allFilters = document.querySelectorAll('.hero-main-filter');
     const allItems = document.querySelectorAll('.hero-main-items');
     const filter = document.querySelector(`.hero-main-filter-${filterType}`);  
@@ -212,14 +213,47 @@ const filterItems = (filterType) => {
     });
 }
 
+const filterItemsCareers = (e, filterType) => {
+    e.preventDefault();
+    const allFilters = document.querySelectorAll('.careers-filter');
+    const allItems = document.querySelectorAll('.careers-list-grid');
+    const filter = document.querySelector(`.careers-filter-${filterType}`);
+    const item = document.querySelector(`.careers-list-grid-${filterType}`);
+    const selectCareers = document.querySelector('#select-careers');
+    const activeClass = 'careers-filter-active';
+
+    allFilters && allFilters.forEach(element => {
+        element.classList.remove(activeClass);
+    });
+    filter && filter.classList.add(activeClass);
+    if (selectCareers) selectCareers.value = filterType;
+
+    allItems && allItems.forEach(element => {
+        element.style.display = 'none';
+    });
+    if (item) item.style.display = 'grid';
+}
+
+const selectCareers = document.querySelector('#select-careers');
+selectCareers && selectCareers.addEventListener('change', (e) => {
+    const selectedOption = selectCareers.value;
+    filterItemsCareers(e, selectedOption);
+});
+
+const careersFilterCareers = document.querySelector('.careers-filter-careers');
+const careersFilterMasters = document.querySelector('.careers-filter-masters');
+careersFilterCareers && careersFilterCareers.addEventListener('click', (e) => { filterItemsCareers(e, 'careers')});
+careersFilterMasters && careersFilterMasters.addEventListener('click', (e) => { filterItemsCareers(e, 'masters')});
+
 const heroFilterCareers = document.querySelector('.hero-main-filter-careers');
 const heroFilterMasters = document.querySelector('.hero-main-filter-masters');
-heroFilterCareers.addEventListener('click', () => { filterItems('careers'); });
-heroFilterMasters.addEventListener('click', () => { filterItems('masters'); });
+heroFilterCareers && heroFilterCareers.addEventListener('click', (e) => { filterItems(e, 'careers'); });
+heroFilterMasters && heroFilterMasters.addEventListener('click', (e) => { filterItems(e, 'masters'); });
 
-window.addEventListener("load", () => {
+window.addEventListener("load", (e) => {
     setBodyMargin();
-    filterItems('careers');
+    filterItems(e, 'careers');
+    filterItemsCareers(e, 'careers');
     createOverlay('statics-grid');
     createOverlay('press-grid');
     createOverlay('why-study-grid', 80);
