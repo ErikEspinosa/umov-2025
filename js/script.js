@@ -264,10 +264,15 @@ window.addEventListener("load", (e) => {
 });
 
 window.addEventListener("resize", (e) => {
-    documentWidth = document.body.clientWidth
-    isMobile = documentWidth <= 480
-    isTablet = documentWidth >= 481 && documentWidth <= 820
-    setBodyMargin();
-    filterItems(e, 'careers');
-    filterItemsCareers(e, 'careers');
+    const newDocumentWidth = document.body.clientWidth;
+    if (documentWidth !== newDocumentWidth) {
+        documentWidth = newDocumentWidth;
+        isMobile = documentWidth <= 480;
+        isTablet = documentWidth >= 481 && documentWidth <= 820;
+        if (isMobile || isTablet) {
+            setBodyMargin();
+            filterItems(e, 'careers');
+            filterItemsCareers(e, 'careers');
+        }
+    }
 });
