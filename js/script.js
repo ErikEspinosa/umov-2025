@@ -45,6 +45,7 @@ const TESTIMONIALS_PATH = './assets/testimonials/';
 let documentWidth = document.body.clientWidth
 let isMobile = documentWidth <= 480
 let isTablet = documentWidth >= 481 && documentWidth <= 820
+let fromTablet = false;
 
 // Menu
 const menuItems = document.querySelectorAll('.nav-main-links-item');
@@ -218,30 +219,29 @@ const filterItemsCareers = (e, filterType) => {
     e.preventDefault();
     const allFilters = document.querySelectorAll('.careers-filter');
     const allItems = document.querySelectorAll('.careers-list-grid');
+    const allSelect = document.querySelectorAll('.select-item');
     const filter = document.querySelector(`.careers-filter-${filterType}`);
     const item = document.querySelector(`.careers-list-grid-${filterType}`);
-    const selectCareers = document.querySelector('#select-careers');
+    const select = document.querySelector(`#select-${filterType}`);
     const activeClass = 'careers-filter-active';
 
     allFilters && allFilters.forEach(element => {
         element.classList.remove(activeClass);
     });
     filter && filter.classList.add(activeClass);
-    if (selectCareers) selectCareers.value = filterType;
-
+    
     allItems && allItems.forEach(element => {
         element.style.display = 'none';
     });
     if (item) item.style.display = 'grid';
+
+    allSelect && allSelect.forEach(element => {
+        element.style.display = 'none';
+    });
+    if (select && (isTablet || isMobile)) select.style.display = 'block';
 }
 
 // Event listeners
-const selectCareers = document.querySelector('#select-careers');
-selectCareers && selectCareers.addEventListener('change', (e) => {
-    const selectedOption = selectCareers.value;
-    filterItemsCareers(e, selectedOption);
-});
-
 const careersFilterCareers = document.querySelector('.careers-filter-careers');
 const careersFilterMasters = document.querySelector('.careers-filter-masters');
 careersFilterCareers && careersFilterCareers.addEventListener('click', (e) => { filterItemsCareers(e, 'careers')});
@@ -266,13 +266,17 @@ window.addEventListener("load", (e) => {
 window.addEventListener("resize", (e) => {
     const newDocumentWidth = document.body.clientWidth;
     if (documentWidth !== newDocumentWidth) {
+        if (!fromTablet)
+            if (newDocumentWidth > documentWidth && documentWidth < 841) 
+                fromTablet = true;
         documentWidth = newDocumentWidth;
         isMobile = documentWidth <= 480;
         isTablet = documentWidth >= 481 && documentWidth <= 820;
-        if (isMobile || isTablet) {
+        if (isMobile || isTablet || fromTablet) {
             setBodyMargin();
             filterItems(e, 'careers');
             filterItemsCareers(e, 'careers');
+            fromTablet = false;
         }
     }
 });
