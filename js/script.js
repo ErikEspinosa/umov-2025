@@ -85,7 +85,6 @@ const openMobileMenu = () => {
 
 const closeMobileMenu = () => {
     if (mobileMenu) mobileMenu.style.display = 'none';
-    closeMobileSubmenus();
     isMobileMenuVisible = !isMobileMenuVisible;
 }
 
@@ -117,6 +116,8 @@ mobileMenuItems && mobileMenuItems.forEach(item => {
         isSubmenuVisible = !isSubmenuVisible;
     })
 })
+const firstMobileMenuItem = mobileMenuItems[0].querySelector('.mobile-menu-item-title');
+firstMobileMenuItem.click();
 
 // Funtions
 const setBodyMargin = () => {
