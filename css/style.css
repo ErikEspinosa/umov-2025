@@ -188,6 +188,13 @@ a img {
     box-sizing: border-box;
   }
 }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .nav-main .container {
+    max-width: 100%;
+    padding: 0 20px 0 10px;
+    box-sizing: border-box;
+  }
+}
 .nav-main .nav-main-grid {
   display: flex;
   justify-content: space-between;
@@ -213,6 +220,7 @@ a img {
 }
 .nav-main .nav-main-grid .nav-main-mobile-menu .nav-main-mobile-menu-icon img {
   display: block;
+  margin-bottom: 3px;
 }
 .nav-main .nav-main-grid .nav-main-logo {
   display: flex;

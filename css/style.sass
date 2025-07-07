@@ -182,6 +182,10 @@ a
             max-width: 100%
             padding-left: 50px
             box-sizing: border-box
+        @include mobile
+            max-width: 100%
+            padding: 0 20px 0 10px
+            box-sizing: border-box
     .nav-main-grid
         display: flex
         justify-content: space-between
@@ -198,6 +202,7 @@ a
                 cursor: pointer
                 img
                     display: block
+                    margin-bottom: 3px
         .nav-main-logo
             display: flex
             align-items: center
