@@ -636,8 +636,8 @@ a img {
   display: none;
   position: absolute;
   right: 0;
-  width: 40px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  width: 60px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255) 80%);
   z-index: 998;
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {

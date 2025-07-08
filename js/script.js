@@ -131,12 +131,13 @@ const setBodyMargin = () => {
 const createOverlay = (elementClass, width) => {
     if (elementClass) {
         const element = document.querySelector(`.${elementClass}`) || null;
+        const elementOffsetTop = element ? element.offsetTop : 0;
         if (element) {
             const rects = element.getClientRects();
             const overlay = document.createElement('div');
             overlay.classList.add(`${elementClass}-overlay`);
             overlay.classList.add('overlay');
-            overlay.style.top = `${rects[0].top}px`;
+            overlay.style.top = `${elementOffsetTop}px`;
             overlay.style.height = `${rects[0].height}px`;
             if (width) {
                 overlay.style.width = `${width}px`;
@@ -255,13 +256,13 @@ heroFilterMasters && heroFilterMasters.addEventListener('click', (e) => { filter
 
 window.addEventListener("load", (e) => {
     setBodyMargin();
-    createOverlay('statics-grid');
-    createOverlay('press-grid');
-    createOverlay('why-study-grid', 80);
     loadTestimonialsImages();
     loadTestimonials();
     filterItems(e, 'careers');
     filterItemsCareers(e, 'careers');
+    createOverlay('press-grid');
+    createOverlay('statics-grid');
+    createOverlay('why-study-grid', 80);
 });
 
 window.addEventListener("resize", (e) => {
