@@ -1382,9 +1382,22 @@ a
                     display: block
                     color: #f6f3ff
                     &::before
-                        content: "✔"
-                        color: #f6f3ff
+                        content: ''
+                        display: inline-block
+                        width: 12px
+                        height: 12px
+                        background-image: url('../assets/check-white.svg')
+                        background-size: contain
+                        background-repeat: no-repeat
+                        background-position: center
+                        vertical-align: middle
                         margin-right: 10px
+                        @include tablet
+                            width: 10px
+                            height: 10px
+                        @include mobile
+                            width: 10px
+                            height: 10px
                 .contact-form-item-form
                     padding: 30px 30px 0 30px
                     box-sizing: border-box
@@ -1992,6 +2005,23 @@ a
                     letter-spacing: -0.44px
                     margin-bottom: 10px
                     color: #162990
+                    &::before
+                        content: ''
+                        display: inline-block
+                        width: 12px
+                        height: 12px
+                        background-image: url('../assets/check-blue.svg')
+                        background-size: contain
+                        background-repeat: no-repeat
+                        background-position: center
+                        vertical-align: middle
+                        margin-right: 6px
+                        @include tablet
+                            width: 10px
+                            height: 10px
+                        @include mobile
+                            width: 10px
+                            height: 10px
                 .hero-detail-form-highlight
                     color: #fa6400
             form
