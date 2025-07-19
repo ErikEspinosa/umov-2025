@@ -1379,7 +1379,12 @@ a
                     @include mobile
                         display: block
                 .contact-form-item-check
+                    display: block
                     color: #f6f3ff
+                    &::before
+                        content: "✔"
+                        color: #f6f3ff
+                        margin-right: 10px
                 .contact-form-item-form
                     padding: 30px 30px 0 30px
                     box-sizing: border-box

@@ -2062,7 +2062,13 @@ a img {
   }
 }
 .contact .contact-grid .contact-item-form .contact-form-grid .contact-form-item-check {
+  display: block;
   color: #f6f3ff;
+}
+.contact .contact-grid .contact-item-form .contact-form-grid .contact-form-item-check::before {
+  content: "✔";
+  color: #f6f3ff;
+  margin-right: 10px;
 }
 .contact .contact-grid .contact-item-form .contact-form-grid .contact-form-item-form {
   padding: 30px 30px 0 30px;
