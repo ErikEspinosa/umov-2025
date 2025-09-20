@@ -43,8 +43,8 @@ const TESTIMONIALS_PATH = './assets/testimonials/';
 
 // Resize screen
 let documentWidth = document.body.clientWidth
-let isMobile = documentWidth <= 480
-let isTablet = documentWidth >= 481 && documentWidth <= 820
+let isMobile = documentWidth <= 600
+let isTablet = documentWidth >= 601 && documentWidth <= 1024
 let fromTablet = false;
 
 // Menu
@@ -250,8 +250,8 @@ window.addEventListener("resize", (e) => {
             if (newDocumentWidth > documentWidth && documentWidth < 841) 
                 fromTablet = true;
         documentWidth = newDocumentWidth;
-        isMobile = documentWidth <= 480;
-        isTablet = documentWidth >= 481 && documentWidth <= 820;
+        isMobile = documentWidth <= 600;
+        isTablet = documentWidth >= 601 && documentWidth <= 1024;
         if (isMobile || isTablet || fromTablet) {
             setBodyMargin();
             filterItems(e, 'careers');
